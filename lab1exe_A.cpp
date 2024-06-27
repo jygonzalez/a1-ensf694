@@ -27,7 +27,7 @@ int main(void)
     
     if(!cin)  // means if cin failed to read
     {
-        cout << "Invlid input. Bye...\n";
+        cout << "Invalid input. Bye...\n";
         exit(1);
     }
     
@@ -37,28 +37,38 @@ int main(void)
         cin >> velocity;
         if(!cin)
         {
-            cout << "Invlid input. Bye...";
+            cout << "Invalid input. Bye...";
             exit(1);
         }
     }
     
+    create_table(velocity);
     return 0;
 }
 
 void create_table(double v)
 {
+   // Add column headers
+    cout << "Angle" << "\t" << "t" << "\t" << "d" << "\n";
+    cout << "(deg)" << "\t" << "(sec)" << "\t" << "(m)" << "\n";
+    
+    for (int i = 0; i <= 90; i += 5)
+    {   
+        double a = degree_to_radian(i);
+        cout << i << "\t" << Projectile_travel_time(a, v) << "\t" << Projectile_travel_distance(a, v) << "\n";
+    }
 }
 
 double Projectile_travel_time(double a, double v)
 {
-    return 0.0;
+    return 2 * v * sin(a) / G;
 }
 
 double Projectile_travel_distance(double a, double v){
-    return 0.0;
+    return (pow(v, 2.0) / G) * sin(2 * a);
 }
 
 double degree_to_radian(double d)
 {
-    return 0.0;
+    return d * PI / 180;
 }
