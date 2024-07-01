@@ -1,6 +1,9 @@
 /*
- * lab1exe_B1.cpp
- * ENSF 694, Lab 1 - Execise B Part One
+ *  File Name: lab1exe_B1.cpp
+ *  Assignment: ENSF 694, Lab 1 - Execise B Part One
+ *  Created by: Mahmood Moussavi
+ *  Completed by: Yael Gonzalez
+ *  Submission Date: July 3, 2024
  */
 
 #include <iostream>
@@ -23,7 +26,7 @@ void foo(int *a, int *b)
 {
   *a += 10;
   *b += 20;
- 
+
   /* point one */
 
   *b += 1;

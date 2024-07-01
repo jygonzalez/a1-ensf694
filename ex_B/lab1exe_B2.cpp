@@ -1,6 +1,9 @@
 /*
- * lab1exe_B2.cpp
- * ENSF 694 - Lab 1 - Execise B Part Two
+ *  File Name: lab1exe_B2.cpp
+ *  Assignment: ENSF 694 - Lab 1 - Execise B Part Two
+ *  Created by: Mahmood Moussavi
+ *  Completed by: Yael Gonzalez
+ *  Submission Date: July 3, 2024
  */
 
 #include <iostream>
@@ -22,7 +25,7 @@ void bar(int *a, int *b)
 {
   *a += 3;
   *b += 4;
-  
+
   /* point one */
   cout << "*a is " << *a << ", *b is " << *b << ".\n";
 }
@@ -32,5 +35,5 @@ void quux(int *p, int *q)
   int n;
   n = *p;
   bar(&n, q);
-  cout << "*p is "<< *p << ", *q is " << *q << ".\n";
+  cout << "*p is " << *p << ", *q is " << *q << ".\n";
 }

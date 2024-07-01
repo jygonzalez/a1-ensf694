@@ -1,7 +1,9 @@
- /*
- *  lab1exe_C.cpp
- *  ENSF 694 Lab 1 Exercise D
- *
+/*
+ *  File Name: lab1exe_C.cpp
+ *  Assignment: ENSF 694 Lab 1 Exercise C
+ *  Created by: Mahmood Moussavi
+ *  Completed by: Yael Gonzalez
+ *  Submission Date: July 3, 2024
  */
 
 #include <iostream>
@@ -25,22 +27,30 @@ int main(void)
   int millisec;
   int minutes;
   double seconds;
-    
+
   cout << "Enter a time interval as an integer number of milliseconds: ";
-  
- // printf("Enter a time interval as an integer number of milliseconds: ");
+
+  // printf("Enter a time interval as an integer number of milliseconds: ");
   cin >> millisec;
-  
-  if (!cin) {
+
+  if (!cin)
+  {
     cout << "Unable to convert your input to an int.\n";
     exit(1);
   }
-  
-  cout << "Doing conversion for input of " <<  millisec <<" milliseconds ... \n", millisec;
+
+  cout << "Doing conversion for input of " << millisec << " milliseconds ... \n";
 
   /* MAKE A CALL TO time_convert HERE. */
+  time_convert(millisec, &minutes, &seconds);
+
   cout << "That is equivalent to " << minutes << " minute(s) and " << seconds << " second(s).\n";
   return 0;
 }
 
 /* PUT YOUR FUNCTION DEFINITION FOR time_convert HERE. */
+void time_convert(int ms_time, int *minutes_ptr, double *seconds_ptr)
+{
+  *minutes_ptr = ms_time / (60 * 1000);
+  *seconds_ptr = (double)(ms_time % (60 * 1000)) / 1000.0;
+}

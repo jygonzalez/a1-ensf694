@@ -1,5 +1,10 @@
-// lab1exe_E.cpp
-// ENSF 694 Lab 1 Exercise E
+/*
+ *  File Name: lab1exe_E.cpp
+ *  Assignment: ENSF 694 Lab 1 Exercise E
+ *  Created by: Mahmood Moussavi
+ *  Completed by: Yael Gonzalez
+ *  Submission Date: July 3, 2024
+ */
 
 #include <iostream>
 using namespace std;
@@ -12,11 +17,13 @@ int what(const int *a, int n)
 {
   const int *max = a, *min = a + n - 1, *guard = a + n;
   const int *p, *q;
-  for (p = a + 1; p != guard; p++) {
+  for (p = a + 1; p != guard; p++)
+  {
     if (*p > *max)
       max = p;
   }
-  for (q = a + n - 1; q != a; q--) {
+  for (q = a + n - 1; q != a; q--)
+  {
     if (q[-1] < *min)
       min = q - 1;
   }
