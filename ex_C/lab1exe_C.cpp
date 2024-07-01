@@ -52,5 +52,6 @@ int main(void)
 void time_convert(int ms_time, int *minutes_ptr, double *seconds_ptr)
 {
   *minutes_ptr = ms_time / (60 * 1000);
+
   *seconds_ptr = (double)(ms_time % (60 * 1000)) / 1000.0;
 }

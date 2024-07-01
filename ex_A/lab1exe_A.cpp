@@ -15,9 +15,31 @@ const double G = 9.8; /* gravitation acceleration 9.8 m/s^2 */
 const double PI = 3.141592654;
 
 void create_table(double v);
+/**
+ * REQUIRES: v >= 0.
+ * PROMISES: prints a table showing projectile distance (d) and time (t) of flight for angles from
+ * 0 to 90 degrees given the specified initial velocity (v) of the projectile.
+ */
+
 double Projectile_travel_time(double a, double v);
+/**
+ * REQUIRES: a >= 0 and a <= 90, and v >= 0.
+ * PROMISES: calculates the time of flight (t) for a projectile given the specified launch angle (a)
+ * and initial velocity (v).
+ */
+
 double Projectile_travel_distance(double a, double v);
+/**
+ * REQUIRES: a >= 0 and a <= 90, and v >= 0.
+ * PROMISES: calculates the horizontal distance traveled (d) by a projectile given the specified
+ * launch angle (a) and initial velocity (v).
+ */
+
 double degree_to_radian(double d);
+/**
+ * REQUIRES: d >= 0 and d <= 90.
+ * PROMISES: converts an angle (d) in degrees to radians.
+ */
 
 int main(void)
 {
@@ -47,10 +69,6 @@ int main(void)
     return 0;
 }
 
-/**
- * Prints a table showing projectile distance (d) and time (t) of flight for angles from 0 to 90 degrees.
- * @param v The initial velocity of the projectile in meters per second
- */
 void create_table(double v)
 {
     // Add column headers (names) and subheaders (units)
@@ -76,33 +94,16 @@ void create_table(double v)
     }
 }
 
-/**
- * Calculates the time of flight (t) for a projectile.
- * @param a The launch angle
- * @param v The initial velocity
- * @return The time of flight
- */
 double Projectile_travel_time(double a, double v)
 {
     return 2 * v * sin(a) / G;
 }
 
-/**
- * Calculates the horizontal distance traveled (d) by a projectile.
- * @param a The launch angle
- * @param v The initial velocity
- * @return The horizontal distance traveled
- */
 double Projectile_travel_distance(double a, double v)
 {
     return (pow(v, 2.0) / G) * sin(2 * a);
 }
 
-/**
- * Converts an angle in degrees to radians.
- * @param d The angle in degrees
- * @return The converted angle in radians
- */
 double degree_to_radian(double d)
 {
     return d * PI / 180;

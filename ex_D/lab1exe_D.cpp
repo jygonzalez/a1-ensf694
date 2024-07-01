@@ -102,8 +102,10 @@ void print_matrix(double matrix[][COL_SIZE], int rows)
     {
         for (int j = 0; j < COL_SIZE; j++)
         {
+            // Print the element at the current row (i) and column (j) followed by a space
             cout << matrix[i][j] << " ";
         }
+        // After printing current row, print a newline character
         cout << endl;
     }
 }

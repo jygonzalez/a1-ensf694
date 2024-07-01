@@ -6,9 +6,10 @@
  */
 #include "MyArray.h"
 
-// TODO: Ask if I should include comments for this, and in such case add them.
 int search(const MyArray *myArray, int obj)
 {
+    // For each element in the list, if the element matches the search object return the index
+    // (position) of the element.
     for (int i = 0; i < myArray->list_size; i++)
     {
         if (myArray->array[i] == obj)
@@ -32,21 +33,24 @@ int retrieve_at(MyArray *myArray, int pos)
 
 int count(MyArray *myArray, int obj)
 {
-    int sum = 0;
+    int count = 0;
 
+    // For each element in the list, if the element matches the object increment the count
     for (int i = 0; i < myArray->list_size; i++)
     {
         if (myArray->array[i] == obj)
         {
-            sum++;
+            count++;
         }
     }
 
-    return sum;
+    return count;
 }
 
 void append(MyArray *myArray, int array[], int n)
 {
+    // If there is enough space to append the new elements, for each element in the input array:
+    // Append it to the list and increment the list size
     if ((myArray->list_size + n) <= SIZE)
     {
         for (int i = 0; i < n; i++)
@@ -58,13 +62,16 @@ void append(MyArray *myArray, int array[], int n)
 
 void insert_at(MyArray *myArray, int pos, int val)
 {
+    // Shift elements to the right to make space for the new element
     for (int i = myArray->list_size; i > pos; i--)
     {
         myArray->array[i] = myArray->array[i - 1];
     }
 
+    // Insert the new element at the specified position
     myArray->array[pos] = val;
 
+    // Increment the list size
     myArray->list_size++;
 }
 
@@ -72,11 +79,13 @@ int remove_at(MyArray *myArray, int pos)
 {
     int removed_value = myArray->array[pos];
 
+    // Shift elements to the left to fill the gap
     for (int i = pos; i < myArray->list_size - 1; i++)
     {
         myArray->array[i] = myArray->array[i + 1];
     }
 
+    // Decrement the list size
     myArray->list_size--;
 
     return removed_value;
@@ -86,19 +95,24 @@ int remove_all(MyArray *myArray, int value)
 {
     int count = 0;
 
+    // For every element in the list that matches the value to be removed:
+    // Remove the element and increment the count of removed elements
     for (int i = 0; i < myArray->list_size; i++)
     {
         if (myArray->array[i] == value)
         {
             remove_at(myArray, i);
             count++;
+            i--; // Adjust the index to account for the removed element
         }
     }
+
     return count;
 }
 
 void display_all(MyArray *myArray)
 {
+    // Print each element in the list, one row per line
     for (int i = 0; i < myArray->list_size; i++)
     {
         cout << myArray->array[i] << "  ";
