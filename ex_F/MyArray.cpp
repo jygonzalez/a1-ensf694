@@ -1,3 +1,9 @@
+/*
+ *  File Name: MyArray.cpp
+ *  Assignment: ENSF 694 Lab 1 Exercise F
+ *  Created by: Yael Gonzalez
+ *  Submission Date: July 3, 2024
+ */
 #include "MyArray.h"
 
 // TODO: Ask if I should include comments for this, and in such case add them.
@@ -90,8 +96,6 @@ int remove_all(MyArray *myArray, int value)
     }
     return count;
 }
-
-// You can modify this function however you want:  it will not be tested
 
 void display_all(MyArray *myArray)
 {
